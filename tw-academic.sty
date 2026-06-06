@@ -43,3 +43,10 @@
 \titlespacing*{\section}{0pt}{12pt}{12pt}
 \titlespacing*{\subsection}{0pt}{12pt}{12pt}
 \titlespacing*{\subsubsection}{0pt}{12pt}{12pt}
+
+% 圖 1-2 style captions (section-local counter, Arabic section number)
+\usepackage{graphicx}
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+\renewcommand{\thefigure}{\arabic{section}-\arabic{figure}}
+\renewcommand{\figurename}{圖}
