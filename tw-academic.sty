@@ -7,3 +7,39 @@
 \usepackage[style=apa,backend=biber]{biblatex}
 \renewcommand{\bibopenparen}{（}
 \renewcommand{\bibcloseparen}{）}
+
+% layout
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{parskip}
+\setlength{\parskip}{12pt}
+
+\usepackage{zhnumber}
+\usepackage{titlesec}
+
+\renewcommand{\thesection}{\zhnumber{\arabic{section}}}
+\renewcommand{\thesubsection}{\zhnumber{\arabic{subsection}}}
+\renewcommand{\thesubsubsection}{\zhnumber{\arabic{subsubsection}}}
+
+% 第X章 研究分析
+\titleformat{\section}
+  {\fontsize{14}{16}\selectfont\bfseries}
+  {第\thesection 章}
+  {1em}{}
+
+% 第X節 勞動技能的編碼邊界
+\titleformat{\subsection}
+  {\fontsize{14}{16}\selectfont\bfseries}
+  {第\thesubsection 節}
+  {1em}{}
+
+% （一）勞動與知識的可編碼性
+\titleformat{\subsubsection}
+  {\fontsize{14}{16}\selectfont\bfseries}
+  {（\thesubsubsection）}
+  {0.5em}{}
+
+\titlespacing*{\section}{0pt}{12pt}{12pt}
+\titlespacing*{\subsection}{0pt}{12pt}{12pt}
+\titlespacing*{\subsubsection}{0pt}{12pt}{12pt}
