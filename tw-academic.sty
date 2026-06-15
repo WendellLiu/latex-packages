@@ -23,6 +23,7 @@
 
 \usepackage{zhnumber}
 \usepackage{titlesec}
+\usepackage{titletoc}
 
 \renewcommand{\thesection}{\zhnumber{\arabic{section}}}
 \renewcommand{\thesubsection}{\zhnumber{\arabic{subsection}}}
@@ -59,3 +60,19 @@
 \renewcommand{\tablename}{表}
 \renewcommand{\thetable}{\zhnumber{\arabic{table}}}
 \setlength{\belowcaptionskip}{12pt}
+
+\renewcommand{\contentsname}{目錄}
+
+\setcounter{tocdepth}{2}
+
+\titlecontents{section}
+  [0em]{}
+  {第\thecontentslabel 章\quad}
+  {}
+  {\titlerule*[0.5pc]{.}\contentspage}
+
+\titlecontents{subsection}
+  [2em]{}
+  {第\thecontentslabel 節\quad}
+  {}
+  {\titlerule*[0.5pc]{.}\contentspage}
