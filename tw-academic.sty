@@ -62,8 +62,6 @@
 \renewcommand{\thetable}{\zhnumber{\arabic{table}}}
 \setlength{\belowcaptionskip}{12pt}
 
-\renewcommand{\contentsname}{目錄}
-
 \setcounter{tocdepth}{2}
 
 \titlecontents{section}
@@ -78,4 +76,16 @@
   {}
   {\titlerule*[0.5pc]{.}\contentspage}
 
-\apptocmd{\tableofcontents}{\vspace{24pt}}{}{}
+\renewcommand{\tableofcontents}{%
+  \clearpage
+  {\centering\fontsize{14}{16}\selectfont\bfseries 目錄\par}
+  \vspace{12pt}
+  \@starttoc{toc}%
+  \clearpage
+}
+
+\defbibheading{bibliography}[\refname]{%
+  \clearpage
+  \section*{#1}%
+  \addcontentsline{toc}{section}{#1}%
+}
